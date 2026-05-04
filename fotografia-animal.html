@@ -1,14 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Final - Fotografia animal</title>
-    <meta name="author" content="Carolina Gomes">
-    <meta name="description" content="contem fotografias de animais">
-</head>    
-<body>
-    
-</body>
-
+     <head>
+       <!-- Contém informações sobre o documento (meta-informações, título, links para CSS e scripts). -->
+        <meta charset="UTF-8"><!-- Define a codificação para caracteres (acentuação correta) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Torna o site responsivo em dispositivos móveis -->
+        <title>Projeto Final Carolina Gomes </title>
+        <meta name="author" content="Carolina Gomes"/><!-- Define o autor do site -->
+        <meta name="description" content="Descrição do projeto final" /><!-- Descrição da página (ajuda no SEO) -->
+        <meta name="keywords" content="ESAD.CR, Licenciatura de Mulimédia, Projecto Final" /><!-- Palavras-chave da página (ajuda no SEO) -->
+        <!-- Metadata para chamar o favicon -->
+        <link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Integração da CSS -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- Contém tudo o que será exibido na página: textos, imagens, links, etc. -->
+        <header id="topHeader" class="pageWidth">
+        <!-- Representa o cabeçalho da página ou de uma seção. Contém títulos, logotipo, menus, etc.-->        
+            <nav id="mainMenu">
+                <div class="navAction">
+                    <div id="headerLogo">
+                        <a href="index.html" title="Projeto Final - Index"
+                        rel="noopener noreferrer"><img src="imagens/logo.png"
+                        alt="Rocket Company Logo"><strong>Foquinha Designer</strong></a>
+                    </div>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__burger"></i>
+                        <i class="ri-close-line nav__close"></i>
+                    </div>
+                </div>
+                <!-- Define uma área de navegação, com links internos ou externos. -->
+                <div class="nav__menu" id="navMenu">
+                    <ul class="nav__list">
+                        <li>
+                            <a class="nav__link" href="index.html"
+                            title="página principal" rel="noopener noreferrer">Início</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="sobre-mim.html" title="Sobre mim" rel="noopener noreferrer">Sobre mim</a>
+                        </li>
+                        <li>
+                            <a class="nav__link active" href="fotografia-animal.html" title="Animal" rel="noopener noreferrer">Animal</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="fotografia-floral.html" title="Floral" rel="noopener noreferrer">Floral</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="fotografia-analogica.html" title="Analógica" rel="noopener noreferrer">Analógica</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="fotografia-modelo-humano.html" title="Modelo humano" rel="noopener noreferrer">Modelo humano</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="processing.html" title="Trabalhos em Processing" rel="noopener noreferrer">Processing</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="contactos.html" title="Contactos/links" rel="noopener noreferrer">Contactos</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+         <main id="mainContent" class="pageWidth">
+        <!-- O conteúdo principal da página, exclusivo e central. Deve haver apenas um <main> por página. -->
+            <h1>Fotografia animal</h1>
+            <h2>Artigo Principal</h2>
+            <h3>Titulo do tipo h3</h3>
+        </main>
+        <footer>
+            <!-- Define o rodapé da página ou de uma secção. Contém informações como: Direitos de autor, contatos, links úteis e créditos -->
+            <p>&copy; - Todos os direitos reservado <b>|</b> 2026 Projeto Final Carolina Gomes</p>
+        </footer>
+        <!-- Os ficheiro de script ficam no final da página -->
+        <script src="js/script.js"></script>
+        <script src="processing/script.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </body>
 </html>
