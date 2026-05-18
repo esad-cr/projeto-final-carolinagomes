@@ -101,6 +101,7 @@ iframe, video {
   --cor-de-links-hover: rgb(221, 255, 3);
   --background-cor-de-botoes: rgb(9, 115, 1);
   --cor-de-texto-botoes: rgb(255, 255, 255);
+  --third-color: rgb(132, 94, 194);
   /********font and typography************/
 
   /***********font weight************/
@@ -198,6 +199,19 @@ h3{
     font-weight: 500;
     line-height: 1.15;
   }
+}
+
+/**************************utilidades***************/
+
+.text_center{
+  text-align: center;
+}
+.white_text{
+  color: var(--cor-de-texto-fundo-claro);
+}
+
+/***.invert_filter{
+  filter: invert(1);
 }
 
 /************************MENU DE NAVEGAÇÃO***********************/
@@ -359,3 +373,91 @@ h3{
   }
 }
 /**********************main footer****************/
+
+
+/*******************************cards************************/
+/*--------- definir o flex/autolayout ---------*/
+.container {
+  --gap: 0;
+  padding: 2rem;
+}
+.flex {
+  display: flex;
+  gap: var(--gap, 1em);
+}
+.box_shadow {
+  box-shadow: 3px 3px 15px 2px rgba(0,0,0,0.52)
+}
+.border_radius {
+  border-radius: 8px;
+}
+.flex-column {
+  flex-direction: column;
+  margin-left: auto;
+}
+
+/*----definir as background-colors----*/
+.bg-primary-color {
+  background-color: var(--cor-primaria);
+}
+.bg-secondary-color {
+  background-color: var(--cor-secundaria);
+}
+.bg-third-color {
+  background-color: var(--third-color);
+}
+/*--- articles - estilo do card ----*/
+
+.container article:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8 px;
+}
+.container article:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8 px;
+}
+.container article {
+  --gap: 2rem;
+  line-height: 1.5;
+  padding: 3em;
+}
+.container article > img {
+  width: 4rem;
+}
+
+/*------botões------*/
+
+.learn-more-button {
+  border: none;
+  border-radius: 40px;
+  letter-spacing: 1px;
+  padding-block: 0.79rem;
+  padding-inline: 2.3rem;
+  margin: auto;
+  margin-top: 3rem;
+  transition: background-color 200ms ease-in-out;
+}
+
+.learn-more-button:hover {
+  background-color: inherit;
+  outline: 2px solid var(--cor-de-texto-fundo-escuro);
+  color: var(--cor-de-texto-fundo-escuro)
+}
+
+@media screen and (max-width: 992px) {
+  .container .flex{
+    flex-direction: column;
+    max-width: 100%;
+    min-width: 90%;
+  }
+  .container article:first-child {
+    border-radius: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .container article:last-child {
+    border-radius: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
