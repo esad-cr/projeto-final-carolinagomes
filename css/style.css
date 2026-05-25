@@ -260,6 +260,10 @@ h3{
   width: 2.5rem;
 }
 
+#headerLogo strong {
+  padding-left: 1rem;
+}
+
 .nav__toggle {
   position: relative;
   width: 32px;
