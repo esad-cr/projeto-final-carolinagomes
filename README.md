@@ -28,10 +28,7 @@ As páginas `index.html`, `sobre-mim.html`, `projetos.html` e `contactos.html` s
 - **index.html** → Página inicial
 - **sobre-mim.html** → Informação sobre o autor
 - **contactos-links.html** → Contactos do autor e links
-- **animal.html** → Secção de fotografia animal
-- **floral.html** → Secção de fotografia floral
-- **modelo-humano.html** → Secção de fotografia de modelo humano
-- **analógica.html** → Secção de fotografia analógica
+- **projetos.html** → Projetos desenvolvidos com tema da fotografia
 - **processing.html** → Projetos desenvolvidos em Processing (com canvas)
 
 ## Estrutura do Projeto
