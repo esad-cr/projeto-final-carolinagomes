@@ -55,18 +55,82 @@
                 </div>
             </nav>
         </header>
-         <main id="mainContent" class="pageWidth">
+          <main id="mainContent" class="pageWidth">
         <!-- O conteúdo principal da página, exclusivo e central. Deve haver apenas um <main> por página. -->
             <h1>Projetos</h1>
-            <h2>Artigo Principal</h2>
-            <h3>Titulo do tipo h3</h3>
+            <section class="card-expand">
+                <article class="card__article">
+                    <img src="imagens/cards/analog.jpg" alt="Beautiful forest landscape" class="card__img">
+                    <div class="card__shadow"></div>
+
+                    <div class="card__data">
+                    <div class="card__icon">
+                        <i class="ri-landscape-fill"></i>
+                    </div>
+
+                    <div class="card__info">
+                        <h2 class="h6 card__title">Fotografia analógica</h2>
+                        <p class="card__description">Fotografia analógica feita do início ao fim</p>
+                    </div>
+                    </div>
+                </article>
+
+                <article class="card__article">
+                    <img src="imagens/cards/cat animal.jpg" alt="Beautiful forest landscape" class="card__img">
+                    <div class="card__shadow"></div>
+                    
+                    <div class="card__data">
+                    <div class="card__icon">
+                        <i class="ri-landscape-fill"></i>
+                    </div>
+
+                    <div class="card__info">
+                        <h2 class="h6 card__title">Fotografia animal</h2>
+                        <p class="card__description">Animais que me conheceram ao longo dos anos</p>
+                    </div>
+                    </div>
+                </article>
+
+                <article class="card__article card__active">
+                    <img src="imagens/cards/cosplay person.jpg" alt="Beautiful forest landscape" class="card__img">
+                    <div class="card__shadow"></div>
+
+                    <div class="card__data">
+                    <div class="card__icon">
+                        <i class="ri-landscape-fill"></i>
+                    </div>
+
+                    <div class="card__info">
+                        <h2 class="h6 card__title">Fotografia de modelo humano</h2>
+                        <p class="card__description">Pessoas que confiaram em mim</p>
+                    </div>
+                    </div>
+                </article>
+
+                <article class="card__article">
+                    <img src="imagens/cards/purple flower.jpg" alt="Beautiful forest landscape" class="card__img">
+                    <div class="card__shadow"></div>
+
+                    <div class="card__data">
+                    <div class="card__icon">
+                        <i class="ri-landscape-fill"></i>
+                    </div>
+
+                    <div class="card__info">
+                        <h2 class="h6 card__title">Fotografia floral</h2>
+                        <p class="card__description">Flores com história</p>
+                    </div>
+                    </div>
+                </article>
+            </section>
         </main>
-        <footer>
+        <footer id="mainFooter" class="pageWidth">
             <!-- Define o rodapé da página ou de uma secção. Contém informações como: Direitos de autor, contatos, links úteis e créditos -->
-            <p>&copy; - Todos os direitos reservado <b>|</b> 2026 Projeto Final Carolina Gomes</p>
+            <p><strong>&copy; - Todos os direitos reservado <b>|</b> 2026 Projeto Final Carolina Gomes</strong></p>
         </footer>
         <!-- Os ficheiro de script ficam no final da página -->
         <script src="js/script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js" integrity="sha512-lbO95HE52QWwrDVEaDJmW9Xr8UIfMpRFT3akB8ett7lGfWsrGKz07L6wfwnF3KJ3T4a8cZupAKoI9Q2jH+0QIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="processing/script.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </body>
 </html>

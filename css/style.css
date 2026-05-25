@@ -374,90 +374,163 @@ h3{
 }
 /**********************main footer****************/
 
-
-/*******************************cards************************/
-/*--------- definir o flex/autolayout ---------*/
-.container {
-  --gap: 0;
-  padding: 2rem;
-}
-.flex {
+/*=============== CARD ===============*/
+.card-expand {
+  height: 100vh;
+  margin-inline: 1rem;
+  padding-block: 3rem;
   display: flex;
-  gap: var(--gap, 1em);
-}
-.box_shadow {
-  box-shadow: 3px 3px 15px 2px rgba(0,0,0,0.52)
-}
-.border_radius {
-  border-radius: 8px;
-}
-.flex-column {
   flex-direction: column;
-  margin-left: auto;
+  row-gap: 1rem;
 }
 
-/*----definir as background-colors----*/
-.bg-primary-color {
-  background-color: var(--cor-primaria);
-}
-.bg-secondary-color {
-  background-color: var(--cor-secundaria);
-}
-.bg-third-color {
-  background-color: var(--third-color);
-}
-/*--- articles - estilo do card ----*/
-
-.container article:first-child {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8 px;
-}
-.container article:last-child {
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8 px;
-}
-.container article {
-  --gap: 2rem;
-  line-height: 1.5;
-  padding: 3em;
-}
-.container article > img {
-  width: 4rem;
+.card__article {
+  position: relative;
+  border-radius: 3rem;
+  box-shadow: 0 4px 8px hsla(0, 0%, 0%, .5);
+  overflow: hidden;
+  flex: 0 0 64px;
+  transition: flex .5s ease;
+  cursor: pointer;
 }
 
-/*------botões------*/
-
-.learn-more-button {
-  border: none;
-  border-radius: 40px;
-  letter-spacing: 1px;
-  padding-block: 0.79rem;
-  padding-inline: 2.3rem;
-  margin: auto;
-  margin-top: 3rem;
-  transition: background-color 200ms ease-in-out;
+.card__img,
+.card__shadow{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.learn-more-button:hover {
-  background-color: inherit;
-  outline: 2px solid var(--cor-de-texto-fundo-escuro);
-  color: var(--cor-de-texto-fundo-escuro)
+.card__img{
+  object-fit: cover;
+  object-position: center;
+  transition: scale .4s;
 }
 
-@media screen and (max-width: 992px) {
-  .container .flex{
-    flex-direction: column;
-    max-width: 100%;
-    min-width: 90%;
+.card__shadow{
+  background: linear-gradient(180deg, hsla(0, 0%, 85%, 0) 50%,
+                                      hsla(0, 0%, 0%, .3) 75%);
+}
+
+.card__data {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  transform: translateY(2rem);
+  opacity: 0;
+  transition: opacity .4s ease .1s, transform .4s ease .1s;
+}
+
+.card__icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  color: var(--cor-de-texto-fundo-escuro);
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.card__title {
+  color: var(--cor-de-texto-fundo-escuro);
+  margin-bottom: .25rem;
+}
+
+.card__description {
+  color: var(--cor-de-texto-fundo-escuro);
+}
+
+/* Card active by default, takes up more space */
+.card__active {
+  flex: 5;
+}
+
+.card__active .card__data {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card__active:hover .card__img {
+  scale: 1.1;
+}
+
+/* Any card expands when you hover over it */
+.card__article:hover {
+  flex: 5;
+}
+
+/* If the hover is NOT on the card active, contract card active at base proportion */
+.card:has(.card__article:not(.card__active):hover) .card__active {
+  flex: 0 0 64px;
+}
+
+/* If the hover is NOT in card active, it also hides its contents */
+.card:has(.card__article:not(.card__active):hover) .card__active .card__data {
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
+/* Show content on the other cards */
+.card__article:hover .card__data {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices <> */
+@media (width >= 540px) {
+  .card {
+    align-items: center;
   }
-  .container article:first-child {
-    border-radius: 0;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+  .card__article {
+    width: 400px;
+    justify-self: center;
   }
-  .container article:last-child {
-    border-radius: 0;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+}
+
+/* For large devices <> */
+@media screen and (width >= 1150px) {
+  .card-expand {
+    max-width: 1120px;
+    margin-inline: auto;
+    flex-direction: row;
+    column-gap: 1.5rem;
   }
+  .card__article {
+    flex: 0 0 80px;
+    height: 460px;
+  }
+  .card__active, 
+  .card__article:hover {
+    flex: 5;
+  }
+  .card:has(.card__article:not(.card__active):hover) .card__active {
+    flex: 0 0 80px;
+  }
+  .card__data {
+    left: 1.5rem;
+    bottom: 1.5rem;
+  }
+  .card__title {
+    white-space: nowrap;
+  }
+  .card__description {
+    font-size: var(--normal-font-size);
+    white-space: nowrap;
+  }
+}
+/****************************************
+************* mainFooter ***************
+****************************************/
+
+#mainFooter {
+  padding: 20px;
+  text-align: center;
 }
