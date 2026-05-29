@@ -549,8 +549,8 @@ h3{
 }
 
 .contacts-card {
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
+    background: var(--cor-primaria);
+    border: none;
     border-radius: 12px;
     padding: 2.5rem 3rem;
     width: 100%;
