@@ -545,7 +545,9 @@ h3{
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 4rem 1rem;
+    min-height: calc(100vh - 80px);
+    padding: 2rem 1rem;
+    background-color: var(--cor-secundaria);
 }
 
 /*para fazer a base do cartão*/
@@ -553,9 +555,9 @@ h3{
     background: var(--cor-primaria);
     border: none;
     border-radius: 12px;
-    padding: 2.5rem 3rem;
+    padding: 4rem 5rem;
     width: 100%;
-    max-width: 420px;
+    max-width: 580px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -563,17 +565,19 @@ h3{
 
 /*como aparece o meu nome no cartão*/
 .card-name {
-  font-size: 22px;
+  font-size: 32px;
   font-weight: 600;
   margin: 0 0 4px;
   text-align: center;
+  color: var(--cor-de-texto-fundo-escuro);
 }
 
 /*como aparece o meu cargo no cartão*/
 .card-role {
-  font-size: 14px;
+  font-size: 18px;
   margin: 0 0 1.5rem;
   text-align: center;
+  color: var(--cor-de-texto-fundo-escuro);
 }
 
 /*para fazer as divisões*/
@@ -581,7 +585,7 @@ h3{
   width: 100px;
   height: 1px;
   background: var(--background-cor-de-botoes);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 /*espaçamentos e alinhamentos dos contactos*/
@@ -590,7 +594,7 @@ h3{
   align-items: center;
   gap: 10px;
   width: 100%;
-  padding: 10px 0;
+  padding: 14px 0;
   text-decoration: none;
   border-bottom: 1px solid var(--cor-de-texto-fundo-claro);
 }
@@ -602,12 +606,12 @@ h3{
 
 /*tamanho do título dos contactos*/
 .contact-label {
-  font-size: 13px;
-  min-width: 70px;
+  font-size: 17px;
+  min-width: 90px;
 }
 
 .contact-value {
-  font-size: 13px;
+  font-size: 17px;
   margin-left: auto;
 }
 
@@ -615,7 +619,8 @@ h3{
 .sobre-mim-section {
   display: flex;
   align-items: stretch;
-  min-height: calc(100vh - 80px); 
+  height: calc(100vh - 80px); 
+  overflow: hidden;
 }
 
 .sobre-mim-foto {
@@ -638,12 +643,15 @@ h3{
   text-align: center;
   padding: 3rem;
   gap: 1rem;
+  color: var(--cor-de-texto-fundo-escuro);
+  background: var(--cor-secundaria);
 }
 
 .sobre-mim-texto h1 {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  color: var(--cor-de-texto-fundo-escuro);
 }
 
 /***mobile*****/
