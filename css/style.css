@@ -378,6 +378,8 @@ h3{
 }
 /**********************main footer****************/
 
+/******projetos******/
+
 /*=============== CARD ===============*/
 .card-expand {
   height: 100vh;
@@ -530,6 +532,16 @@ h3{
     white-space: nowrap;
   }
 }
+
+#mainContent:has(.card-expand) {
+    background: var(--cor-secundaria);
+    max-width: 100%;
+    padding: 0;
+}
+
+#mainContent .text_center {
+    color: var(--cor-de-texto-fundo-escuro);
+}
 /****************************************
 ************* mainFooter ***************
 ****************************************/
@@ -584,7 +596,7 @@ h3{
 .divider {
   width: 100px;
   height: 1px;
-  background: var(--background-cor-de-botoes);
+  background: var(--cor-secundaria);
   margin-bottom: 2rem;
 }
 
@@ -596,7 +608,7 @@ h3{
   width: 100%;
   padding: 14px 0;
   text-decoration: none;
-  border-bottom: 1px solid var(--cor-de-texto-fundo-claro);
+  border-bottom: 1px solid var(--cor-secundaria);
 }
 
 /*sem borda*/
