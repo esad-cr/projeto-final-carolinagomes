@@ -12,18 +12,16 @@ let fadeProgress = 0;
 let iconSize = 100
 
 function preload() {
-  imgInspira = loadImage('processing/icons-respiracao-02.png');
-  imgExpira = loadImage('processing/icons-respiracao-01.png');
+  imgInspira = loadImage('icons respiracao-02.png');
+  imgExpira = loadImage('icons respiracao-01.png');
    for (let i = 1; i <= 3; i++) {
-  iconsWhite.push(loadImage(`processing/icons-brancos-0${i}.png`));
-  iconsGreen.push(loadImage(`processing/icons-verdes-0${i}.png`));
+  iconsWhite.push(loadImage(`icons brancos-0${i}.png`));
+  iconsGreen.push(loadImage(`icons verdes-0${i}.png`));
   }
 }
 
 function setup() {
-var myCanvas = createCanvas(450,450);
-myCanvas.parent("pjCanvas");
-  //createCanvas(450, 450);
+  createCanvas(450, 450);
   rectMode(CENTER);
   imageMode(CENTER);
   textAlign(CENTER, CENTER);
