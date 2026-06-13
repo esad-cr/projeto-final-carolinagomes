@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotografia</title>
+    <meta name="author" content="Carolina Gomes"/>
+    <link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="topHeader" class="pageWidth">
+        <nav id="mainMenu">
+            <div class="navAction">
+                <div id="headerLogo">
+                    <a href="index.html" rel="noopener noreferrer">
+                        <img src="imagens/logo.png" alt="Logo">
+                        <strong>Foquinha Designer</strong>
+                    </a>
+                </div>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
+            </div>
+            <div class="nav__menu" id="navMenu">
+                <ul class="nav__list">
+                    <li><a class="nav__link active" href="projetos.html">Projetos</a></li>
+                    <li><a class="nav__link" href="sobre-mim.html">Sobre mim</a></li>
+                    <li><a class="nav__link" href="processing.html">Processing</a></li>
+                    <li><a class="nav__link" href="contactos.html">Contactos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="mainContent" class="pageWidth">
+        <h1 class="gallery__title" id="galleryTitle"></h1>
+        <section class="gallery" id="gallery"></section>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox__close" id="lightboxClose">
+            <i class="ri-close-line"></i>
+        </button>
+        <img src="" alt="Foto expandida" class="lightbox__img" id="lightboxImg">
+    </div>
+
+    <footer id="mainFooter" class="pageWidth">
+        <p><strong>&copy; - Todos os direitos reservado | 2026 Projeto Final Carolina Gomes</strong></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Define as categorias e as respetivas fotos
+        const categorias = {
+            analogica: {
+                titulo: 'Fotografia Analógica',
+                fotos: [
+                    'imagens/fotografias/analog.jpg',
+                    'imagens/fotografias/analog 1.jpg',
+                    'imagens/fotografias/analog 2.jpg',
+                ]
+            },
+            animal: {
+                titulo: 'Fotografia Animal',
+                fotos: [
+                    'imagens/fotografias/_MG_8762.jpg',
+                    'imagens/fotografias/red bugs.png',
+                    'imagens/fotografias/_MG_8767.jpg',
+                    'imagens/fotografias/_MG_8782.jpg',
+                    'imagens/fotografias/_MG_8794.jpg',
+                    'imagens/fotografias/_MG_8797.jpg',
+                    'imagens/fotografias/bee animal.jpg',
+                    'imagens/fotografias/cat animal 2.jpg',
+                    'imagens/fotografias/cat animal 3.jpg',
+                    'imagens/fotografias/cat animal 4.jpg',
+                    'imagens/fotografias/cat animal 5.jpg',
+                    'imagens/fotografias/cat animal 6.jpg',
+                    'imagens/fotografias/cat animal.jpg',
+                    'imagens/fotografias/coruja animal.jpg',
+                    'imagens/fotografias/dog animal.jpg',
+                    'imagens/fotografias/otter animal.jpg',
+                    'imagens/fotografias/otter animal 2.jpg',
+                    'imagens/fotografias/passaro animal.jpg',
+                    'imagens/fotografias/pigeon animal 1.jpg',
+                    'imagens/fotografias/pigeon animal.jpg',
+                    'imagens/fotografias/pigeons animal.jpg',
+                ]
+            },
+            humano: {
+                titulo: 'Fotografia de Modelo Humano',
+                fotos: [
+                    'imagens/fotografias/alex person.jpg',
+                    'imagens/fotografias/cosplay person 1.jpg',
+                    'imagens/fotografias/cosplay person 2.jpg',
+                    'imagens/fotografias/cosplay person 3.jpg',
+                    'imagens/fotografias/cosplay person 4.jpg',
+                    'imagens/fotografias/cosplay person 5.jpg',
+                    'imagens/fotografias/cosplay person 6.jpg',
+                    'imagens/fotografias/cosplay person 7.jpg',
+                    'imagens/fotografias/cosplay person 8.jpg',
+                    'imagens/fotografias/diogo person.jpg',
+                    'imagens/fotografias/kyle person 3.jpg',
+                    'imagens/fotografias/kyle person 4.jpg',
+                    'imagens/fotografias/kyle person.jpg',
+                ]
+            },
+            floral: {
+                titulo: 'Fotografia Floral',
+                fotos: [
+                    'imagens/fotografia/flower 1.jpg',
+                    'imagens/fotografia/purple flower.jpg',
+                    'imagens/fotografia/red flower.png',
+                    'imagens/fotografia/white flower.png',
+                    'imagens/fotografia/yellow flower.jpg',
+                ]
+            }
+        };
+
+        // Lê o parâmetro da URL
+        const params = new URLSearchParams(window.location.search);
+        const categoria = params.get('categoria');
+        const dados = categorias[categoria];
+
+        // Preenche a página com o título e as fotos
+        if (dados) {
+            document.getElementById('galleryTitle').textContent = dados.titulo;
+            document.title = dados.titulo;
+            const gallery = document.getElementById('gallery');
+            dados.fotos.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = dados.titulo;
+                img.classList.add('gallery__img');
+                gallery.appendChild(img);
+            });
+        }
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeBtn = document.getElementById('lightboxClose');
+
+        document.getElementById('gallery').addEventListener('click', (e) => {
+            if (e.target.classList.contains('gallery__img')) {
+                lightboxImg.src = e.target.src;
+                lightbox.classList.add('lightbox__active');
+            }
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('lightbox__active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('lightbox__active');
+            }
+        });
+    </script>
+</body>
+</html>
